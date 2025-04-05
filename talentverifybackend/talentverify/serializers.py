@@ -14,7 +14,5 @@ class EmployeeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Employee
-        fields = [
-            'id', 'employee_name', 'employee_id', 'current_role', 'department',
-            'start_date', 'left_date', 'duties', 'company', 'company_name'
-        ]
+        fields = "__all__"
+   

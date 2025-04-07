@@ -16,16 +16,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from talentverify.views import add_company, add_employee, get_companies, list_employees , delete_employee, update_employee, get_employee
+from talentverify.views import add_company, add_employee, get_companies, list_employees , update_employee,employee_detail,update_company,get_company,delete_company
 
 urlpatterns = [
     path('admin/', admin.site.urls),
    path('add-company/', add_company, name='add-company'),
-   path('add-employee/', add_employee, name='add-employee'),
    path('companies/', get_companies, name='get_companies'),
-    path('employees/', list_employees, name='list_employees'),
-   path('employees/<int:pk>/', delete_employee, name='delete_employee'),
-    path('employees/<int:pk>/update/', update_employee, name='update_employee'),
-    path('employees/<int:pk>/', get_employee, name='get_employee')
+   path('companies/<int:pk>/update/', update_company, name='update_company'),
+   path('companies/<int:pk>/', get_company, name='get_company'),
+   path('companies/<int:pk>/delete/', delete_company, name='delete_company'),
+
+
+
+
+
+   path('add-employee/', add_employee, name='add-employee'),
+   path('employees/', list_employees, name='list_employees'),
+   path('employees/<int:pk>/', employee_detail, name='employee_detail'),
+   path('employees/<int:pk>/update/', update_employee, name='update_employee'),
 
 ]
